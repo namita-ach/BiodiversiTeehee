@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aletheia - Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form id="signupForm" action="{{ url_for('signup') }}" method="post">
+                <div class="form-group">
+                    <label for="UserID">UserID:</label>
+                    <input type="text" id="UserID" name="UserID" required>
+                </div>
+                <div class="form-group">
+                    <label for="Username">Username:</label>
+                    <input type="text" id="Username" name="Username" required>
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password:</label>
+                    <input type="password" id="Password" name="Password" required>
+                </div>
+                <div class="form-group">
+                    <label for="UserRole">Role:</label>
+                    <select id="UserRole" name="UserRole" required>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                        <option value="researcher">Researcher</option>
+                        <option value="cityplanner">City Planner</option>
+                        <option value="conversationist">Conservationist</option>
+                        <option value="policymaker">Policy maker</option>
+                        <option value="city scientist">City scientist</option>
+                        <option value="Student">Student</option>
+                        <option value="Volunteer">Volunteer</option>
+                    </select>
+                </div>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Don't have an account? <a href="{{ url_for('login') }}">Login</a></p>
+        <p>Return to <a href="{{ url_for('home') }}">Homepage</a></p>
+    </div>
+</body>
+</html>

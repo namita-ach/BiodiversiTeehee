@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aletheia - Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>BIO-SUSTAINABILITY TRACKING DATABASE</h1>
+        <h2>☆ Empowering Conservation Through Insightful Data and Community Collaboration. ☆</h2>
+        <!--<button id="signupButton">Sign Up</button>
+        <button id="loginButton">Login</button>-->
+        <p><a href="{{ url_for('signup') }}">Sign Up</a> | <a href="{{ url_for('login') }}">Log In</a></p>
+    </header>
+    
+    <section class="description">
+        <p><h2>The Biodiversity Tracking Database is a versatile, web-based platform designed to support researchers, conservationists, and urban planners in managing biodiversity data within specific regions. </h2></p>
+        <p><h2>It streamlines species cataloging, habitat tracking, and conservation monitoring through user-friendly data entry, visualization tools, and geographic mapping features.</h2></p>
+        <p><h2>Accessible on both web and mobile devices, the database also fosters community involvement by allowing citizen scientists to contribute. </h2></p>
+        <p><h2>This centralized tool enhances understanding and preservation of local ecosystems, supporting informed decisions and effective conservation efforts.</h2></p>
+    </section>
+
+
+
+    <img src="{{ url_for('static', filename='images/gradient desktop wallpaper_.jpeg') }}" alt="Background Image" id="background-image">
+    <!--<img src="C:\Aletheia\gradient desktop wallpaper_.jpeg" alt="Background Image" id="background-image">-->
+        <section class="features">
+            <div class="feature">
+                <img src="{{ url_for('static', filename='images/206cd51f17354bcbaa13db7c9a0dc9dc.jpg') }}" alt="Feature 1">
+                <!--<img src="206cd51f17354bcbaa13db7c9a0dc9dc.jpg" alt="Feature 1">-->
+                
+                <h2>Species</h2>
+                <h3><p>Records essential information about various species, including identification, habitat, and conservation status.</p></h3>
+            </div>
+   
+            <div class="feature">
+                <img src="{{ url_for('static', filename='images/eb422514f192c316390bb49b11d7d6e9.jpg') }}" alt="Feature 2">
+                <!--<img src="eb422514f192c316390bb49b11d7d6e9.jpg" alt="Feature 2">-->
+                
+                <h2>Sustainability Inititatives</h2>
+                <h3><p>Captures details of projects aimed at promoting sustainable practices and biodiversity conservation.</p></h3>
+            </div>
+    
+    
+            <div class="feature">
+                <img src="{{ url_for('static', filename='images/9cf0a1d2633d0189b25d5dbc666c48c2.jpg') }}" alt="Feature 3">
+                <!--<img src="9cf0a1d2633d0189b25d5dbc666c48c2.jpg" alt="Feature 3">-->
+                
+                <h2>Biodiversity Metric</h2>
+                <h3><p>Tracks specific biodiversity metrics related to species count and health within different initiatives.</p></h3>
+            </div>
+    
+    
+            <div class="feature">
+                <img src="{{ url_for('static', filename='images/eb5c4414dd1de4d7b5c2dac22ff090cd.jpg') }}" alt="Feature 4">
+                <!--<img src="eb5c4414dd1de4d7b5c2dac22ff090cd.jpg" alt="Feature 4">-->
+                
+                <h2>User</h2>
+                <h3><p>Manages user authentication, roles, and contact information for system participants.</p></h3>
+            </div>
+
+            <div class="feature">
+                <img src="{{ url_for('static', filename='images/download.jpeg') }}" alt="Feature 5">
+                <!--<img src="C:\Aletheia\download.jpeg" alt="Feature 4">-->
+                
+                <h2>Report</h2>
+                <h3><p>Stores generated reports with analysis and insights on species trends and initiative effectiveness.</p></h3>
+            </div>
+        </section>
+
+        <script type="text/javascript" src="java.js"></script>
+
+</body>
+</html>

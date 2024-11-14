@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contribute Data - {{ selected_table }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Enter Data for {{ selected_table }}</h1>
+    <h6> All Date Entries should be in yyyy-mm-dd format </h6>
+    <form method="POST" action="{{ url_for('contribute_data') }}">
+        <input type="hidden" name="selected_table" value="{{ selected_table }}">
+        {% for column in columns %}
+            <label for="{{ column }}">{{ column }}:</label>
+            <input type="text" name="{{ column }}" id="{{ column }}" required><br>
+        {% endfor %}
+        <button type="submit" name="column_data">Submit Data</button>
+    </form>
+    <a href="{{ url_for('contribute_data_index') }}">Back to Table Selection</a>
+</body>
+</html>

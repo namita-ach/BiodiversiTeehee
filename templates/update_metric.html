@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Biodiversity Metric</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <section class="feature">
+        <div class="feature-box">
+            <h1>Update Biodiversity Metric</h1>
+            <form action="{{ url_for('update_metric', metric_id=metric[0]) }}" method="POST">
+                <label for="species_id">Species ID:</label><br>
+                <input type="text" id="species_id" name="species_id" value="{{ metric[1] }}" readonly><br><br>
+                <label for="initiative_id">Initiative ID:</label><br>
+                <input type="text" id="initiative_id" name="initiative_id" value="{{ metric[2] }}" readonly><br><br>
+                <label for="metric_value">New Metric Value:</label><br>
+                <input type="text" id="metric_value" name="metric_value" value="{{ metric[3] }}" required><br><br>
+                <button type="submit">Update Metric</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
