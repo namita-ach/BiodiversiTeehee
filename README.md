@@ -113,4 +113,4 @@ A relational schema is designed to ensure data integrity and optimized for scala
 
 ---
 
-Click [here]('https://docs.google.com/document/d/1wYwFKHeueN3hm1Bp5fYJqHb5hEO5yMf25UcuxSjUR-M/edit?usp=sharing') for detailed documentation.
+Click [here](https://docs.google.com/document/d/1wYwFKHeueN3hm1Bp5fYJqHb5hEO5yMf25UcuxSjUR-M/edit?usp=sharing) for detailed documentation.
