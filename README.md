@@ -41,7 +41,7 @@ The **Biodiversity Tracking Database** is a comprehensive tool designed to aid r
 ## System Architecture
 The project uses a client-server model with the following stack:
 - **Backend:** Python (Flask for web application, MySQL for database management)
-- **Frontend:** HTML, CSS, and JavaScript for UI, with visualization libraries for data presentation.
+- **Frontend:** HTML and CSS
 - **Database:** MySQL, with relational tables for species, habitats, sustainability initiatives, and biodiversity metrics.
 - **Operating System:** Ubuntu, selected for stability and compatibility with open-source tools.
 
