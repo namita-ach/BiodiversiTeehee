@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Collaborators</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sec.css') }}">
+</head>
+<body>
+    <h1>Find Collaborators</h1>
+    <form method="POST" action="{{ url_for('find_collaborators') }}">
+        <label for="role">Select Role:</label>
+        <select name="role" id="role" required>
+            <option value="">--Select Role--</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+            <option value="researcher">Researcher</option>
+            <option value="cityplanner">City Planner</option>
+            <option value="conversationist">Conservationist</option>
+            <option value="policymaker">Policy maker</option>
+            <option value="city scientist">City scientist</option>
+            <option value="Student">Student</option>
+            <option value="Volunteer">Volunteer</option>
+        </select>
+        <button type="submit">Find Collaborators</button>
+    </form>
+
+    {% if collaborators %}
+        <h2>Collaborators with Role: {{ selected_role }}</h2>
+        <ul>
+            {% for collaborator in collaborators %}
+                <li>{{ collaborator[1] }} (UserID: {{ collaborator[0] }})</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

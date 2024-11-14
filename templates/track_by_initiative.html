@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track Species by Initiative</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Track Species by Initiative</h1>
+    <form method="POST">
+        <label for="initiative_id">Select Initiative:</label>
+        <select name="initiative_id" id="initiative_id">
+            {% for initiative in initiative_list %}
+                <option value="{{ initiative.InitiativeID }}">{{ initiative.InitiativeName }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Search Species</button>
+    </form>
+
+    {% if species %}
+    <h2>Species impacted by Selected Initiative:</h2>
+    <table border="1">
+        <tr>
+            <th>Species Name</th>
+            <th>Species ID</th>
+        </tr>
+        {% for s in species %}
+        <tr>
+            <td>{{ s.CommonName }}</td>
+            <td>{{ s.SpeciesID }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    <a href="{{ url_for('track_initiative_index') }}">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Reports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Generate Reports</h1>
+
+    <h2>Species Table</h2>
+    <table border="1">
+        <tr>
+            <th>Common Name</th>
+            <th>Scientific Name</th>
+        </tr>
+        {% for species in species_list %}
+        <tr>
+            <td>{{ species[0] }}</td>
+            <td>{{ species[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Sustainability Initiative Table</h2>
+    <table border="1">
+        <tr>
+            <th>Initiative Name</th>
+            <th>Description</th>
+        </tr>
+        {% for initiative in initiatives_list %}
+        <tr>
+            <td>{{ initiative[0] }}</td>
+            <td>{{ initiative[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="{{ url_for('generate_report') }}">
+        <button>Generate Report</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Biodiversity Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Biodiversity Report</h1>
+        <br>
+        <!-- Form for selecting species and initiative -->
+        <form method="POST">
+            <div class="form-group">
+                <label for="species_name">Species Name:</label>
+                <select name="species_name" required>
+                    {% for species in species_list %}
+                        <option value="{{ species[0] }}">{{ species[0] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="initiative_name">Initiative Name:</label>
+                <select name="initiative_name" required>
+                    {% for initiative in initiatives_list %}
+                        <option value="{{ initiative[0] }}">{{ initiative[0] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="button">Generate Report</button>
+        </form>
+    </div>
+        <!-- Display report data table below the form -->
+        {% if report_data %}
+        <div class="tables-container">
+            <h2>Report Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Species Common Name</th>
+                        <th>Scientific Name</th>
+                        <th>Initiative Name</th>
+                        <th>Average Metric Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in report_data %}
+                    <tr>
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
